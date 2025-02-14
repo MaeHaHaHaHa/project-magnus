@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccwirwkpemra6"]
+
+[ext_resource type="Script" path="res://lumia.gd" id="1_dboro"]
+[ext_resource type="Texture2D" uid="uid://u8vqctfwmlq" path="res://image/lumia.jpg" id="1_qr5gr"]
+[ext_resource type="PackedScene" uid="uid://cnfjcfhr3v71j" path="res://player.tscn" id="2_tqsln"]
+
+[node name="Lumia" type="Node"]
+script = ExtResource("1_dboro")
+metadata/_edit_horizontal_guides_ = [650.0]
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.002
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.00006
+offset_right = -199.304
+offset_bottom = -157.0
+scale = Vector2(1.20816, 1.32252)
+texture = ExtResource("1_qr5gr")
+
+[node name="Player" parent="." instance=ExtResource("2_tqsln")]
+position = Vector2(573, 546)
+
+[node name="MobTimer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
