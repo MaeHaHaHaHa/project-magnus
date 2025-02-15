@@ -1,6 +1,6 @@
 extends Area2D
 
-#signal hit
+signal hit
 
 var speed = 500
 var screen_size
@@ -28,10 +28,10 @@ func _physics_process(delta):
 	#rotation = 0
 	#show()
 	#$CollisionShape2D.disabled = false
-#
-#
-#func _on_Player_body_entered(_body):
-	#hide() # Player disappears after being hit.
-	#hit.emit()
-	# Must be deferred as we can't change physics properties on a physics callback.
-	#$CollisionShape2D.set_deferred(&"disabled", true)
+
+
+func _on_area_entered(_area: Area2D) -> void:
+	hide() # Player disappears after being hit.
+	hit.emit()
+	 #Must be deferred as we can't change physics properties on a physics callback.
+	$CollisionShape2D.set_deferred(&"disabled", true)
