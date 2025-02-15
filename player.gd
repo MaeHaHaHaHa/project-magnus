@@ -12,9 +12,9 @@ var screen_size
 func _physics_process(delta):
 	var velocity = Vector2()
 
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		velocity.x = speed
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		velocity.x = -speed
 	#if Input.is_action_pressed("ui_up"):
 		#velocity.y = -speed
