@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2fe14onk1o2p"]
+
+[ext_resource type="Script" path="res://hyunwoo.gd" id="1_svlww"]
+[ext_resource type="Texture2D" uid="uid://dij8im1tnei8e" path="res://image/skinimage_hyunwoo6.png" id="2_llboo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lndie"]
+size = Vector2(192, 714)
+
+[node name="Hyunwoo" type="Area2D"]
+position = Vector2(22, -90)
+script = ExtResource("1_svlww")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.358717, 0.358717)
+texture = ExtResource("2_llboo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.74504, 1.75064)
+scale = Vector2(0.2493, 0.2493)
+shape = SubResource("RectangleShape2D_lndie")
