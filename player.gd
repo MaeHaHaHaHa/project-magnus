@@ -33,15 +33,9 @@ func _physics_process(delta):
 			position = pos_temp
 		else:
 			position.x = movement_min
-	
-#func start(pos):
-	#position = pos
-	#rotation = 0
-	#show()
-	#$CollisionShape2D.disabled = false
 
 
-func _on_area_entered(_area: Area2D) -> void:
+func _on_area_entered(_area: Area2D):
 	hide() # Player disappears after being hit.
 	hit.emit()
 	 #Must be deferred as we can't change physics properties on a physics callback.

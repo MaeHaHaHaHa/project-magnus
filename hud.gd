@@ -2,14 +2,15 @@ extends CanvasLayer
 
 signal start_game
 
-#func show_message(text):
-	#$MessageLabel.text = text
+func show_message(text):
+	$MessageLabel.text = text
 	#$MessageLabel.show()
 	#$MessageTimer.start()
 
 
-#func show_game_over():
-	#show_message("Game Over")
+func show_game_over():
+	$MessageLabel.show()
+	show_message("Game Over")
 	#await $MessageTimer.timeout
 	#$MessageLabel.text = "멧현우 피하기"
 	#$MessageLabel.show()
@@ -19,8 +20,6 @@ signal start_game
 
 func _on_StartButton_pressed():
 	$StartButton.hide()
+	$MessageLabel.hide()
 	start_game.emit()
-
-
-#func _on_MessageTimer_timeout():
-	#$MessageLabel.hide()
+	Global.timer.start()

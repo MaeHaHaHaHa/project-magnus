@@ -30,4 +30,5 @@ one_shot = true
 [node name="HUD" parent="." instance=ExtResource("4_60fio")]
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
