@@ -46,3 +46,4 @@ func _on_area_entered(_area: Area2D) -> void:
 	hit.emit()
 	 #Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred(&"disabled", true)
+	Global.start = false
