@@ -30,3 +30,5 @@ offset_right = 121.112
 offset_bottom = -106.0
 theme_override_font_sizes/font_size = 100
 text = "Start"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccwirwkpemra6"]
+[gd_scene load_steps=5 format=3 uid="uid://ccwirwkpemra6"]
 
 [ext_resource type="Script" path="res://lumia.gd" id="1_dboro"]
 [ext_resource type="Texture2D" uid="uid://u8vqctfwmlq" path="res://image/lumia.jpg" id="1_qr5gr"]
 [ext_resource type="PackedScene" uid="uid://cnfjcfhr3v71j" path="res://player.tscn" id="2_tqsln"]
+[ext_resource type="PackedScene" uid="uid://dr0vbnu78ybx0" path="res://hud.tscn" id="4_60fio"]
 
 [node name="Lumia" type="Node"]
 script = ExtResource("1_dboro")
@@ -26,6 +27,8 @@ position = Vector2(573, 546)
 process_callback = 0
 one_shot = true
 autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("4_60fio")]
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
