@@ -26,7 +26,6 @@ position = Vector2(573, 546)
 [node name="MobTimer" type="Timer" parent="."]
 process_callback = 0
 one_shot = true
-autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("4_60fio")]
 
