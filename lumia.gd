@@ -10,8 +10,7 @@ func _ready():
 func _on_mob_timer_timeout():
 	var enemy_scene = preload("res://hyunwoo.tscn")
 	var enemy_instance = enemy_scene.instantiate()
-	## @todo 랜덤 범위 수정해야함.
-	enemy_instance.global_position = Vector2(randi_range(22, 800-22), -90)
+	enemy_instance.position = Vector2(randi_range(22, 1152 - 22), -90)
 	add_child(enemy_instance)
 
 	$MobTimer.start()
