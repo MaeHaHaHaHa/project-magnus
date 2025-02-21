@@ -8,6 +8,10 @@ func show_message(text):
 	#$MessageTimer.start()
 
 
+func show_score(text):
+	$ScoreLabel.text = Global.score
+
+
 func show_game_over():
 	$MessageLabel.show()
 	show_message("Game Over")
@@ -23,3 +27,4 @@ func _on_StartButton_pressed():
 	$MessageLabel.hide()
 	start_game.emit()
 	Global.timer.start()
+	
